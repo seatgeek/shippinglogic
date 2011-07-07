@@ -72,6 +72,12 @@ Spec::Runner.configure do |config|
     }
   end
   
+  def fedex_misc
+    {
+      :customer_reference => [ "CUSTOMER_REFERENCE" => "1234" ]
+    }
+  end
+  
   def use_response(key, options = {})
     path = "#{SPEC_ROOT}/fedex/responses/#{key}.xml"
     if File.exists?(path)

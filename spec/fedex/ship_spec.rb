@@ -9,6 +9,7 @@ describe "FedEx Ship" do
     @shipment.attributes = fedex_shipper
     @shipment.attributes = fedex_recipient
     @shipment.attributes = fedex_package
+    @shipment.attributes = fedex_misc
   end
   
   it "should create a new shipment" do

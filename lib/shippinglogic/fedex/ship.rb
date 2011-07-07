@@ -79,6 +79,7 @@ module Shippinglogic
     #
     # * <tt>just_validate</tt> - will tell FedEx to ONLY validate the shipment, not actually create it. (default: false)
     # * <tt>rate_request_types</tt> - one or more of Enumerations::RATE_REQUEST_TYPES. (default: ACCOUNT)
+    # * <tt>customer_references</tt> - one or more tuples of [Enumerations::REFERENCE_TYPES, <value>]. (default: nil)
     #
     # == Simple Example
     #
@@ -93,7 +94,8 @@ module Shippinglogic
     #     :package_weight => 24,
     #     :package_length => 12,
     #     :package_width => 12,
-    #     :package_height => 12
+    #     :package_height => 12,
+    #     :customer_references => [ "CUSTOMER_REFERENCE", "1234" ]
     #   )
     #
     #   shipment.inspect
@@ -168,6 +170,7 @@ module Shippinglogic
       # misc options
       attribute :just_validate,               :boolean,     :default => false
       attribute :rate_request_types,          :array,       :default => ["ACCOUNT"]
+      attribute :customer_references,         :array
       
       private
         def target

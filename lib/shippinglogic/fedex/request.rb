@@ -98,6 +98,15 @@ module Shippinglogic
               end
             end
             
+            if (respond_to?(:customer_references) && customer_references.any?)
+              b.CustomerReferences do
+                customer_references.each do |cr|
+                  b.CustomerReferenceType cr[0]
+                  b.Value cr[1]
+                end
+              end
+            end
+            
             if respond_to?(:signature) && signature
               self.special_services_requested << "SIGNATURE_OPTION"
             end
