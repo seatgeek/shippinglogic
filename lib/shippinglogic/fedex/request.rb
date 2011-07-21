@@ -99,8 +99,8 @@ module Shippinglogic
             end
             
             if (respond_to?(:customer_references) && customer_references.any?)
-              b.CustomerReferences do
-                customer_references.each do |cr|
+              customer_references.each do |cr|
+                b.CustomerReferences do
                   b.CustomerReferenceType cr[0]
                   b.Value cr[1]
                 end
