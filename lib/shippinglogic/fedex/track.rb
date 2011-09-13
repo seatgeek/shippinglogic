@@ -77,7 +77,8 @@ module Shippinglogic
           
           self.signature_name = details[:delivery_signature_name]
           self.service_type = details[:service_type]
-          self.status = details[:status_description]
+          self.status_code = details[:status_code]
+          self.status_description = details[:status_description]
           self.delivery_at = Time.parse(details[:actual_delivery_timestamp]) unless details[:actual_delivery_timestamp].nil?
           
           # when there is only one event, it's not contained in an array
