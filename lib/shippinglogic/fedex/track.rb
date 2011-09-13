@@ -48,7 +48,8 @@ module Shippinglogic
           :destination_residential,
           :signature_name,
           :service_type,
-          :status,
+          :status_code,
+          :status_description,
           :delivery_at,
           :events
         
