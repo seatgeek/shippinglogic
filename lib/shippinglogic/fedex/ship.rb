@@ -164,7 +164,7 @@ module Shippinglogic
       attribute :ship_time,                   :datetime,    :default => lambda { |shipment| Time.now }
       attribute :service_type,                :string
       attribute :dropoff_type,                :string,      :default => "REGULAR_PICKUP"
-      attribute :special_services_requested,  :array,       :default => []
+      attribute :special_services_requested,  :array
       attribute :signature,                   :string
       
       # misc options
