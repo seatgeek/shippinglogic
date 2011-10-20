@@ -7,6 +7,8 @@ module Shippinglogic
       private
         # Convenience method for sending requests to FedEx
         def request(body)
+          # HACK
+          Rails.logger.error body
           real_class.post(base.url, :body => body)
         end
         
