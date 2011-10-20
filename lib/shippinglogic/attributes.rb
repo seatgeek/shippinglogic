@@ -95,7 +95,14 @@ module Shippinglogic
           name = name.to_sym
           value = @attributes[name].nil? ? attribute_default(name) : @attributes[name]
           type = attribute_type(name)
-          return nil if value.nil? && type != :array
+          
+          if value.nil?
+            if type == :array
+              return @attributes[name] = []
+            else
+              return nil
+            end
+          end
           
           case type
           when :array
